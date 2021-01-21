@@ -1,4 +1,5 @@
 let titleHead = ['topic', 'tasksFinished%', 'tasksFinished', 'tasksGiven', 'totalTimeSpent', 'finishedAt', 'startedAt',]
+
 let table = [
     {
     topic : 'html',
@@ -141,23 +142,33 @@ let table = [
     
     startedAt : new Date("2021-01-20:13:00"),
     
-    finishedAt : new Date("2021-01-20:13:00"),
+    finishedAt : new Date("2021-01-20:15:00"),
     
     tasksGiven : 10,
     
     tasksFinished :7,
 
-    totalTimeSpent : totalTimeSpent(this.finishedAt,this.finishedAt),
+    totalTimeSpent : null,
 
-    tasksFinishedPr : tasksFinishedPr(this.tasksGiven,this.tasksFinished),
+    tasksFinishedPr : null,
             },
     ];
+
 function tasksFinishedPr(tasksGiven,tasksFinished){
  return (100*tasksFinished) / tasksGiven + '%';
 }
-function totalTimeSpent(finishedAt,finishedAt){
-    return finishedAt - finishedAt
+function totalTimeSpent(startedAt,finishedAt){
+
+    return  finishedAt - startedAt
 }
+for(let i = 0; i<table.length; i++){
+    table[i].totalTimeSpent = totalTimeSpent(table[i].startedAt.getHours(),table[i].finishedAt.getHours()) 
+}
+for(let i = 0; i<table.length; i++){
+    table[i].tasksFinishedPr = tasksFinishedPr(table[i].tasksGiven,table[i].tasksFinished) 
+}
+
+
 document.write('<table>');
 document.write(`<tr><th>${titleHead[0]}</th><th>${titleHead[1]}</th><th>${titleHead[2]}</th><th>${titleHead[3]}</th><th>${titleHead[4]}</th><th>${titleHead[5]}</th><th>${titleHead[6]}</th><tr>`);
 
