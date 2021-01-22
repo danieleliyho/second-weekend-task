@@ -1,152 +1,154 @@
-let titleHead = ['topic', 'tasksFinished%', 'tasksFinished', 'tasksGiven', 'totalTimeSpent', 'finishedAt', 'startedAt',]
+
+
+let titleHead = ['topic','startedAt' ,'finishedAt', 'tasksGiven','tasksFinished',   'tasksFinished%' ,'totalTimeSpent',]
 
 let table = [
     {
     topic : 'html',
 
-    startedAt : new Date("2021-01-20:13:00"),
+    startedAt : new Date("2021-01-20:11:00"),
 
     finishedAt : new Date("2021-01-20:13:00"),
 
     tasksGiven : 10,
 
-    tasksFinished :7,
+    tasksFinished :8,
     
-    totalTimeSpent : totalTimeSpent(this.finishedAt,this.finishedAt),
+    totalTimeSpent : null,
 
-    tasksFinishedPr : tasksFinishedPr(this.tasksGiven,this.tasksFinished),
+    tasksFinishedPr : null,
     },
     {
-    topic : 'html',
+    topic : 'java',
 
-    startedAt : new Date("2021-01-20:13:00"),
+    startedAt : new Date("2021-01-20:13:05"),
 
-    finishedAt : new Date("2021-01-20:13:00"),
+    finishedAt : new Date("2021-01-20:15:00"),
 
-    tasksGiven : 10,
+    tasksGiven : 20,
 
     tasksFinished :7,
 
-    totalTimeSpent : totalTimeSpent(this.finishedAt,this.finishedAt),
+    totalTimeSpent : null,
 
-    tasksFinishedPr : tasksFinishedPr(this.tasksGiven,this.tasksFinished),
+    tasksFinishedPr : null,
 
     },
     {
-    topic : 'html',
+    topic : 'javascript',
 
-    startedAt : new Date("2021-01-20:13:00"),
+    startedAt : new Date("2021-01-20:07:00"),
 
-    finishedAt : new Date("2021-01-20:13:00"),
+    finishedAt : new Date("2021-01-20:09:00"),
 
-    tasksGiven : 10,
+    tasksGiven : 20,
 
-    tasksFinished :7,
+    tasksFinished :13,
 
-    totalTimeSpent : totalTimeSpent(this.finishedAt,this.finishedAt),
+    totalTimeSpent : null,
 
-    tasksFinishedPr : tasksFinishedPr(this.tasksGiven,this.tasksFinished),
+    tasksFinishedPr : null,
     },
     {
-    topic : 'html',
+    topic : 'python',
 
     startedAt : new Date("2021-01-20:13:00"),
 
-    finishedAt : new Date("2021-01-20:13:00"),
+    finishedAt : new Date("2021-01-20:14:00"),
 
-    tasksGiven : 10,
+    tasksGiven : 15,
 
-    tasksFinished :7,
+    tasksFinished :9,
          
-    totalTimeSpent : totalTimeSpent(this.finishedAt,this.finishedAt),
+    totalTimeSpent : null,
 
-    tasksFinishedPr : tasksFinishedPr(this.tasksGiven,this.tasksFinished),
+    tasksFinishedPr : null,
     },
     {
-    topic : 'html',
+    topic : 'c++',
 
-    startedAt : new Date("2021-01-20:13:00"),
+    startedAt : new Date("2021-01-20:11:00"),
 
-    finishedAt : new Date("2021-01-20:13:00"),
+    finishedAt : new Date("2021-01-20:14:30"),
 
-    tasksGiven : 10,
+    tasksGiven : 18,
 
-    tasksFinished :7,
+    tasksFinished :9,
         
-    totalTimeSpent : totalTimeSpent(this.finishedAt,this.finishedAt),
+    totalTimeSpent : null,
 
-    tasksFinishedPr : tasksFinishedPr(this.tasksGiven,this.tasksFinished),
+    tasksFinishedPr : null,
     },
     {
-    topic : 'html',
+    topic : 'typescript',
 
     startedAt : new Date("2021-01-20:13:00"),
 
-    finishedAt : new Date("2021-01-20:13:00"),
+    finishedAt : new Date("2021-01-20:15:00"),
 
     tasksGiven : 10,
 
-    tasksFinished :7,
+    tasksFinished :5,
 
-    totalTimeSpent : totalTimeSpent(this.finishedAt,this.finishedAt),
+    totalTimeSpent : null,
 
-    tasksFinishedPr : tasksFinishedPr(this.tasksGiven,this.tasksFinished),
+    tasksFinishedPr : null,
     },
     {
-    topic : 'html',
+    topic : 'css',
 
-    startedAt : new Date("2021-01-20:13:00"),
+    startedAt : new Date("2021-01-20:11:45"),
 
-    finishedAt : new Date("2021-01-20:13:00"),
+    finishedAt : new Date("2021-01-20:15:00"),
 
-    tasksGiven : 10,
+    tasksGiven : 19,
 
-    tasksFinished :7,
+    tasksFinished :2,
     
-    totalTimeSpent : totalTimeSpent(this.finishedAt,this.finishedAt),
+    totalTimeSpent : null,
 
-    tasksFinishedPr : tasksFinishedPr(this.tasksGiven,this.tasksFinished),
+    tasksFinishedPr : null,
     },
     {
-    topic : 'html',
+    topic : 'arrays',
                                                     
     startedAt : new Date("2021-01-20:13:00"),
                                                 
-    finishedAt : new Date("2021-01-20:13:00"),
+    finishedAt : new Date("2021-01-20:20:00"),
                                                         
-    tasksGiven : 10,
+    tasksGiven : 25,
                                                         
-    tasksFinished :7,
+    tasksFinished :12,
 
-    totalTimeSpent : totalTimeSpent(this.finishedAt,this.finishedAt),
+    totalTimeSpent : null,
 
-    tasksFinishedPr : tasksFinishedPr(this.tasksGiven,this.tasksFinished),
+    tasksFinishedPr : null,
     },
     {
-    topic : 'html',
+    topic : 'objects',
 
-    startedAt : new Date("2021-01-20:13:00"),
+    startedAt : new Date("2021-01-20:15:10"),
 
-    finishedAt : new Date("2021-01-20:13:00"),
+    finishedAt : new Date("2021-01-20:18:00"),
 
-    tasksGiven : 10,
+    tasksGiven : 13,
 
-    tasksFinished :7,
+    tasksFinished :8,
 
-    totalTimeSpent : totalTimeSpent(this.finishedAt,this.finishedAt),
+    totalTimeSpent : null,
 
-    tasksFinishedPr : tasksFinishedPr(this.tasksGiven,this.tasksFinished),
+    tasksFinishedPr : null,
         },
     {
-    topic : 'html',
+    topic : 'github',
     
-    startedAt : new Date("2021-01-20:13:00"),
+    startedAt : new Date("2021-01-20:13:02"),
     
     finishedAt : new Date("2021-01-20:15:00"),
     
-    tasksGiven : 10,
+    tasksGiven : 21,
     
-    tasksFinished :7,
+    tasksFinished :11,
 
     totalTimeSpent : null,
 
@@ -155,14 +157,22 @@ let table = [
     ];
 
 function tasksFinishedPr(tasksGiven,tasksFinished){
- return (100*tasksFinished) / tasksGiven + '%';
+ return Math.floor((100*tasksFinished) / tasksGiven);
 }
-function totalTimeSpent(startedAt,finishedAt){
 
-    return  finishedAt - startedAt
-}
+function totalTimeSpent(startedAt,finishedAt){
+    let duration = finishedAt  - startedAt;
+    let milliseconds = duration;
+    seconds = Math.floor((duration / 1000) % 60);
+    minutes = Math.floor((duration / (1000 * 60)) % 60);
+    hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
+    hours = (hours < 10) ? hours : hours;
+    minutes = (minutes < 10) ? minutes : minutes;
+
+    return Number(hours + "." + minutes) ;
+  }
 for(let i = 0; i<table.length; i++){
-    table[i].totalTimeSpent = totalTimeSpent(table[i].startedAt.getHours(),table[i].finishedAt.getHours()) 
+    table[i].totalTimeSpent = totalTimeSpent(table[i].startedAt,table[i].finishedAt) 
 }
 for(let i = 0; i<table.length; i++){
     table[i].tasksFinishedPr = tasksFinishedPr(table[i].tasksGiven,table[i].tasksFinished) 
@@ -172,6 +182,40 @@ for(let i = 0; i<table.length; i++){
 document.write('<table>');
 document.write(`<tr><th>${titleHead[0]}</th><th>${titleHead[1]}</th><th>${titleHead[2]}</th><th>${titleHead[3]}</th><th>${titleHead[4]}</th><th>${titleHead[5]}</th><th>${titleHead[6]}</th><tr>`);
 
+function formatStartedAt(object){
+    let hours = object.startedAt.getHours()
+    let minutes = object.startedAt.getMinutes()
+    hours = (hours < 10) ? "0" + hours : hours;
+    minutes = (minutes < 10) ? "0" + minutes : minutes;
+    
+    return hours + ':' + minutes
+}
+function formatFinishedAt(object){
+    let hours = object.finishedAt.getHours()
+    let minutes = object.finishedAt.getMinutes()
+    hours = (hours < 10) ? "0" + hours : hours;
+    minutes = (minutes < 10) ? "0" + minutes : minutes;
+    
+    return hours + ':' + minutes
+}
 for(let object of table){
-    document.write(`<tr><td>${object.topic}</td><td>${object.startedAt.getHours()}</td><td>${object.finishedAt.getHours()}</td><td>${object.tasksGiven}</td><td>${object.tasksFinished}</td><td>${object.tasksFinishedPr}</td><td>${object.totalTimeSpent}</td></tr>`)
+    let totalTime;
+    if(object.totalTimeSpent<= 2){
+        totalTime = 'green';
+
+    }else if(object.totalTimeSpent>2 && object.totalTimeSpent<=5 ){
+        totalTime = 'orange';
+    }else{
+        totalTime = 'red';
+    }
+    let tasksFinishedPrC;
+    if(object.tasksFinishedPr<=50){
+        tasksFinishedPrC = 'lightBlue'
+    }else if(object.tasksFinishedPr>50 && object.tasksFinishedPr<=75){
+        tasksFinishedPrC = 'blue'
+    }else{
+        tasksFinishedPrC = 'deepBlue'
+    }
+
+    document.write(`<tr><td>${object.topic}</td><td>${formatStartedAt(object)}</td><td>${formatFinishedAt(object)}</td><td>${object.tasksGiven}</td><td>${object.tasksFinished}</td><td class=${tasksFinishedPrC}>${object.tasksFinishedPr}%</td><td class=${totalTime}>${object.totalTimeSpent}</td></tr>`)
 }document.write('</table>');

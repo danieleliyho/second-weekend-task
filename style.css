@@ -1,3 +1,34 @@
 table, th, td {
-    border: 1px solid black;
+   border-radius: 10%;
+    color: white;
+    text-align: center;
+    table {
+        width: 100%;
+      }
   }
+  td{
+    background-color: black;
+  }
+  th{
+    background-color: gray;
+  }
+
+  .green{
+   background-color: green;
+  }
+  .red{
+    background-color: red;
+   }
+   .orange{
+       background-color: orange;
+   }
+   .lightBlue{
+       background-color: lightblue;
+   }
+   .blue{
+    background-color: blue;
+   }
+   .deepBlue{
+    background-color: deepskyblue
+    ;
+   }
