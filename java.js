@@ -2,6 +2,7 @@
 
 let titleHead = ['topic','startedAt' ,'finishedAt', 'tasksGiven','tasksFinished',   'tasksFinished%' ,'totalTimeSpent',]
 
+
 let table = [
     {
     topic : 'html',
@@ -156,11 +157,11 @@ let table = [
             },
     ];
 
-function tasksFinishedPr(tasksGiven,tasksFinished){
+function tasksFinishedPrF(tasksGiven,tasksFinished){
  return Math.floor((100*tasksFinished) / tasksGiven);
 }
 
-function totalTimeSpent(startedAt,finishedAt){
+function totalTimeSpentF(startedAt,finishedAt){
     let duration = finishedAt  - startedAt;
     let milliseconds = duration;
     seconds = Math.floor((duration / 1000) % 60);
@@ -172,17 +173,38 @@ function totalTimeSpent(startedAt,finishedAt){
     return Number(hours + "." + minutes) ;
   }
 for(let i = 0; i<table.length; i++){
-    table[i].totalTimeSpent = totalTimeSpent(table[i].startedAt,table[i].finishedAt) 
+    table[i].totalTimeSpent = totalTimeSpentF(table[i].startedAt,table[i].finishedAt) 
 }
+
 for(let i = 0; i<table.length; i++){
-    table[i].tasksFinishedPr = tasksFinishedPr(table[i].tasksGiven,table[i].tasksFinished) 
+    table[i].tasksFinishedPr = tasksFinishedPrF(table[i].tasksGiven,table[i].tasksFinished) 
 }
 
 
-document.write('<table>');
-document.write(`<tr><th>${titleHead[0]}</th><th>${titleHead[1]}</th><th>${titleHead[2]}</th><th>${titleHead[3]}</th><th>${titleHead[4]}</th><th>${titleHead[5]}</th><th>${titleHead[6]}</th><tr>`);
 
-function formatStartedAt(object){
+let body = document.getElementsByTagName('body');
+let tableHTML = document.createElement('table');
+document.body.append(tableHTML)
+let tr = document.createElement('tr');
+let th = document.createElement('th');
+let td = document.createElement('td');
+tableHTML.appendChild(tr);
+
+ for(let i = 0; i<titleHead.length; i++ ){
+    let th = document.createElement('th');
+    th.innerHTML = titleHead[i];
+    tr.appendChild(th);
+ }
+ function tdItems(){
+    // `<tr><td>${object.topic}</td><td>${formatStartedAt(object)}</td><td>${formatFinishedAt(object)}</td><td>${object.tasksGiven}</td><td>${object.tasksFinished}</td><td class=${tasksFinishedPrC}>${object.tasksFinishedPr}%</td><td class=${totalTime}>${object.totalTimeSpent}</td></tr>`)
+
+ }
+  tr = document.createElement('tr');
+ tableHTML.appendChild(tr);
+
+// document.write(`<tr><th>${titleHead[0]}</th><th>${titleHead[1]}</th><th>${titleHead[2]}</th><th>${titleHead[3]}</th><th>${titleHead[4]}</th><th>${titleHead[5]}</th><th>${titleHead[6]}</th><tr>`);
+
+function formatStartedAtF(object){
     let hours = object.startedAt.getHours()
     let minutes = object.startedAt.getMinutes()
     hours = (hours < 10) ? "0" + hours : hours;
@@ -190,7 +212,7 @@ function formatStartedAt(object){
     
     return hours + ':' + minutes
 }
-function formatFinishedAt(object){
+function formatFinishedAtF(object){
     let hours = object.finishedAt.getHours()
     let minutes = object.finishedAt.getMinutes()
     hours = (hours < 10) ? "0" + hours : hours;
@@ -198,7 +220,38 @@ function formatFinishedAt(object){
     
     return hours + ':' + minutes
 }
+// for(let object of table){
+
+
+//     document.write(`<tr><td>${object.topic}</td><td>${formatStartedAt(object)}</td><td>${formatFinishedAt(object)}</td><td>${object.tasksGiven}</td><td>${object.tasksFinished}</td><td class=${tasksFinishedPrC}>${object.tasksFinishedPr}%</td><td class=${totalTime}>${object.totalTimeSpent}</td></tr>`)
+// }
+
+
+
 for(let object of table){
+
+ for(let i = 0; i<7; i++){
+
+    let td = document.createElement('td');
+    let t = formatStartedAtF(object)
+    if(i == 1){
+        td.innerHTML = formatStartedAtF(object);
+        tr.className = 'totalTime'
+        tr.appendChild(td);
+        
+        
+    }
+    else if (i == 2){
+        
+        td.innerHTML = formatFinishedAtF(object);
+        tr.appendChild(td);
+    }
+    else{
+        td.innerHTML = Object.values(object)[i] ;
+        tr.appendChild(td);
+        
+    }
+    
     let totalTime;
     if(object.totalTimeSpent<= 2){
         totalTime = 'green';
@@ -216,6 +269,8 @@ for(let object of table){
     }else{
         tasksFinishedPrC = 'deepBlue'
     }
-
-    document.write(`<tr><td>${object.topic}</td><td>${formatStartedAt(object)}</td><td>${formatFinishedAt(object)}</td><td>${object.tasksGiven}</td><td>${object.tasksFinished}</td><td class=${tasksFinishedPrC}>${object.tasksFinishedPr}%</td><td class=${totalTime}>${object.totalTimeSpent}</td></tr>`)
-}document.write('</table>');
+    
+ }
+ tr = document.createElement('tr');
+ tableHTML.appendChild(tr);
+}
