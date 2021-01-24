@@ -201,7 +201,63 @@ tableHTML.appendChild(tr);
  }
   tr = document.createElement('tr');
  tableHTML.appendChild(tr);
+ for(let object of table){
 
+    for(let i = 0; i<7; i++){
+
+        let td = document.createElement('td');
+        let t = formatStartedAtF(object)
+        if(i===5){
+            td.className = classer(object.totalTimeSpent)
+        }
+        if(i===6){
+            td.className = classerPr(object.tasksFinishedPr)
+        }
+        if(i == 1){
+            td.innerHTML = formatStartedAtF(object);
+    
+            tr.appendChild(td);
+        }
+        else if (i == 2){
+            td.innerHTML = formatFinishedAtF(object);
+            tr.appendChild(td);
+        }
+        else{
+            td.innerHTML = Object.values(object)[i] ;
+            tr.appendChild(td);
+            
+        }
+        
+     }
+     tr = document.createElement('tr');
+ tableHTML.appendChild(tr);
+    }
+    
+     function classer(time){
+        let totalTime;
+        if(time <= 2){
+            totalTime = 'green';
+    
+        }else if(time>2 &&time<=5 ){
+            totalTime = 'orange';
+        }else{
+            totalTime = 'red';
+            
+            
+        }
+        return totalTime
+    }
+            function classerPr(precent){
+            let tasksFinishedPrC;
+            if(precent<=50){
+                tasksFinishedPrC = 'lightBlue'
+            }else if(precent>50 && precent<=75){
+                tasksFinishedPrC = 'blue'
+            }else{
+                tasksFinishedPrC = 'deepBlue'
+            }
+            return tasksFinishedPrC
+     }
 // document.write(`<tr><th>${titleHead[0]}</th><th>${titleHead[1]}</th><th>${titleHead[2]}</th><th>${titleHead[3]}</th><th>${titleHead[4]}</th><th>${titleHead[5]}</th><th>${titleHead[6]}</th><tr>`);
 
 function formatStartedAtF(object){
@@ -225,52 +281,3 @@ function formatFinishedAtF(object){
 
 //     document.write(`<tr><td>${object.topic}</td><td>${formatStartedAt(object)}</td><td>${formatFinishedAt(object)}</td><td>${object.tasksGiven}</td><td>${object.tasksFinished}</td><td class=${tasksFinishedPrC}>${object.tasksFinishedPr}%</td><td class=${totalTime}>${object.totalTimeSpent}</td></tr>`)
 // }
-
-
-
-for(let object of table){
-
- for(let i = 0; i<7; i++){
-
-    let td = document.createElement('td');
-    let t = formatStartedAtF(object)
-    if(i == 1){
-        td.innerHTML = formatStartedAtF(object);
-        tr.className = 'totalTime'
-        tr.appendChild(td);
-        
-        
-    }
-    else if (i == 2){
-        
-        td.innerHTML = formatFinishedAtF(object);
-        tr.appendChild(td);
-    }
-    else{
-        td.innerHTML = Object.values(object)[i] ;
-        tr.appendChild(td);
-        
-    }
-    
-    let totalTime;
-    if(object.totalTimeSpent<= 2){
-        totalTime = 'green';
-
-    }else if(object.totalTimeSpent>2 && object.totalTimeSpent<=5 ){
-        totalTime = 'orange';
-    }else{
-        totalTime = 'red';
-    }
-    let tasksFinishedPrC;
-    if(object.tasksFinishedPr<=50){
-        tasksFinishedPrC = 'lightBlue'
-    }else if(object.tasksFinishedPr>50 && object.tasksFinishedPr<=75){
-        tasksFinishedPrC = 'blue'
-    }else{
-        tasksFinishedPrC = 'deepBlue'
-    }
-    
- }
- tr = document.createElement('tr');
- tableHTML.appendChild(tr);
-}
